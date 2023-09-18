@@ -15,16 +15,54 @@ class RedirectIfAuthenticated
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next, string ...$guards): Response
-    {
-        $guards = empty($guards) ? [null] : $guards;
+    // public function handle(Request $request, Closure $next, string ...$guards): Response
+    // {
 
-        foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
+    //     ######## The code is the defaul laravel :
+        
+    //     $guards = empty($guards) ? [null] : $guards;
+    //     foreach ($guards as $guard) {
+    //             if (Auth::guard($guard)->check()) {
+    //                 return redirect(RouteServiceProvider::HOME);
+    //         }
+    //     }
+        
+    //     return $next($request);
+        
+        #========================================================================================#
+
+        
+        ######## The code is the merge between default & course : 
+        
+        // $guards = empty($guards) ? [null] : $guards;
+        
+        // foreach ($guards as $guard) {
+            
+        //     if (Auth::guard($guard)->check()) {
+        //         if ($guard == 'admin')
+        //         return redirect(RouteServiceProvider::ADMIN);
+        //         else
+        //             return redirect(RouteServiceProvider::HOME);
+        //     }
+        // }
+        // return $next($request);
+
+
+
+        ######## The code is the youtube course :
+
+        public function handle(Request $request, Closure $next, $guard = null){
+        
+        if (Auth::guard($guard)->check()) {
+                if ($guard == 'admin')
+                return redirect(RouteServiceProvider::ADMIN);
+            else
                 return redirect(RouteServiceProvider::HOME);
-            }
         }
 
         return $next($request);
-    }
+        }
+
+
+    // }
 }
