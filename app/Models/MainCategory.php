@@ -5,14 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class MainCategorie extends Model
+class MainCategory extends Model
 {
     use HasFactory;
-
-    protected $table='languages';
+    protected $table='main_categories';
     protected $guarded=[];
 
     public $timestamp=True;
-
 
 }
