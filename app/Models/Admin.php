@@ -31,8 +31,22 @@ class Admin extends Authenticatable
     //     'remember_token',
     // ];
 
-    protected $guarded=[];
+    // protected $guarded=[];
     public $timestamp=True;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

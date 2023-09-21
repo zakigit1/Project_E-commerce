@@ -10,22 +10,22 @@
                      <a href="">
                             <i class="la la-home"></i>
                             <span class="menu-title" data-i18n="nav.dash.main">
-                                   المتاجر 
+                                   لغات الموقع 
                             </span>
                             <span class="badge badge badge-info badge-pill float-right mr-2">
-                                   5
+                                   {{App\Models\Language::count()}}
                             </span>
                      </a>
 
                 <ul class="menu-content">
                      <li class="active">
-                            <a class="menu-item" href="" data-i18n="nav.dash.ecommerce">
+                            <a class="menu-item" href="{{route('admin.all.lang')}}" data-i18n="nav.dash.ecommerce">
                             عرض الكل 
                             </a>
                      </li>
                      <li>
-                            <a class="menu-item" href="" data-i18n="nav.dash.crypto">
-                                   أضافة متجر جديد 
+                            <a class="menu-item" href="{{route('admin.create.lang')}}" data-i18n="nav.dash.crypto">
+                                   أضافة لغة جديده
                             </a>
                      </li>
                 </ul>

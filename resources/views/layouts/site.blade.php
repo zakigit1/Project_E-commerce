@@ -68,10 +68,12 @@
 
 
     <header id="header" class="header-3 sticky-menu">
+
         @include('front.includes.header-mobile')
         @include('front.includes.header-top')
         @include('front.includes.header-center')
         @include('front.includes.header-bottom')
+        
     </header>
 
     <div id="header-sticky">
